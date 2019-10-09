@@ -127,9 +127,8 @@
         let menu = this.getMenu();
         if(menu.isAt(x,y)){
           menu.click(x,y);
-        }else{
-          this.closeMenu();
         }
+        this.closeMenu();
       }
       else{
         let objectFound = this.objectAt(x,y);
@@ -323,10 +322,10 @@
 
 
   let frameCounter = 0;
-  setInterval(function(){
+  setInterval(() => {
     frameCounter++;
     mainScreen.update();
     mainScreen.render();
-  }, 2000);
+  }, 1000);
 
 </script>
