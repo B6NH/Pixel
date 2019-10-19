@@ -33,6 +33,26 @@
     render(screen){
       this.image.render(screen);
     }
+
+    get x(){
+      return this.image.x;
+    }
+
+    get y(){
+      return this.image.y;
+    }
+
+    get width(){
+      return this.image.width;
+    }
+
+    get height(){
+      return this.image.height;
+    }
+
+    click(screen,x,y){
+      console.log("Window");
+    }
   }
 
   class Pixel{
