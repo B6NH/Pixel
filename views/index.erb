@@ -11,6 +11,9 @@
     isMenu(){
       return false;
     }
+    isWindow(){
+      return false;
+    }
     isAt(x,y){
       return (x>=this.x)&&(x<this.x+this.width)&&(y>=this.y)&&(y<this.y+this.height)
     }
@@ -52,6 +55,10 @@
 
     click(screen,x,y){
       console.log("Window");
+    }
+
+    isWindow(){
+      return true;
     }
   }
 
@@ -183,7 +190,7 @@
       let menu = new Menu();
       let option1 = new MenuOption(8,2,"purple","Open");
       let option2 = new MenuOption(8,3,"white","Edit");
-      let option3 = new MenuOption(8,4,"orange","Save");
+      let option3 = new MenuOption(8,4,"orange","Close");
       menu.addOption(option1);
       menu.addOption(option2);
       menu.addOption(option3);
@@ -251,6 +258,13 @@
       });
       this.objects.splice(menuIndex,1);
     }
+
+    closeWindow(){
+      let windowIndex = this.objects.findIndex(windowCandidate => {
+        return windowCandidate.isWindow();
+      });
+      this.objects.splice(windowIndex,1);
+    }
   }
 
   class MenuOption extends ScreenObject{
@@ -283,6 +297,8 @@
         // ADD WINDOW TO SCREEN
         let wind = new Window();
         screen.addObject(5,5,wind);
+      }else if(this.text=="Close"){
+        screen.closeWindow();
       }
     }
   }
