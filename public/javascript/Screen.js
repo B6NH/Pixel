@@ -115,6 +115,8 @@ class Screen{
     let windowIndex = this.objects.findIndex(windowCandidate => {
       return windowCandidate.isWindow();
     });
-    this.objects.splice(windowIndex,1);
+    if(windowIndex!=-1){
+      this.objects.splice(windowIndex,1);
+    }
   }
 }
