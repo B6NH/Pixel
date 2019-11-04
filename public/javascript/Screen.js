@@ -112,9 +112,13 @@ class Screen{
   }
 
   closeWindow(){
-    let windowIndex = this.objects.findIndex(windowCandidate => {
-      return windowCandidate.isWindow();
-    });
+    let windowIndex = -1;
+    for(let i=this.objects.length-1;i>=0;i--){
+      if(this.objects[i].isWindow()){
+        windowIndex = i;
+        break;
+      }
+    }
     if(windowIndex!=-1){
       this.objects.splice(windowIndex,1);
     }
