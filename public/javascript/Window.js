@@ -1,7 +1,7 @@
 class Window extends ScreenObject{
   constructor(){
     super();
-    this.image = new Image(5,5,"pink");
+    this.image = new Image(7,7,"pink");
   }
 
   setPosition(x,y){
@@ -32,7 +32,12 @@ class Window extends ScreenObject{
     return this.image.height;
   }
 
+  setImagePixel(x,y,color){
+    this.image.setPixel(x,y,color);
+  }
+
   click(screen,x,y){
+    this.setImagePixel(x-this.x,y-this.y,"black");
     console.log("Window");
   }
 

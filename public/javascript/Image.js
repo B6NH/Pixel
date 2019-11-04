@@ -33,4 +33,13 @@ class Image extends ScreenObject{
     this.isBackground = true;
   }
 
+  pixelAt(x,y){
+    return this.pixels[y][x];
+  }
+
+  setPixel(x,y,color){
+    let pixel = this.pixelAt(x,y);
+    pixel.setColor(color);
+  }
+
 }

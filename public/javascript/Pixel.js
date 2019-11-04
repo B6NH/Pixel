@@ -7,4 +7,8 @@ class Pixel{
   renderAt(x,y,screen){
     screen.setPixel(x+this.x,y+this.y,this.color);
   }
+
+  setColor(color){
+    this.color = color;
+  }
 }
