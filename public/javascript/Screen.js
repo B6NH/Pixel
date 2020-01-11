@@ -10,12 +10,13 @@ class Screen{
 
   setClickEvents(){
     let scr = this;
+    const f = function(){
+      let row = this.closest('tr');
+      scr.clickAt(this.cellIndex, row.rowIndex);
+    };
     for(let i=0;i<this.mainTable.rows.length; i++){
       for(let j=0;j<this.mainTable.rows[i].cells.length;j++){
-        this.mainTable.rows[i].cells[j].onclick = function(){
-          let row = this.closest('tr');
-          scr.clickAt(this.cellIndex, row.rowIndex);
-        };
+        this.mainTable.rows[i].cells[j].onclick = f;
       }
     }
   }
