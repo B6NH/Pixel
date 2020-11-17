@@ -1,8 +1,7 @@
 # Pixel
-JavaScript Application in Sinatra
-
 ![Screenshot](https://i.imgur.com/vz50RfG.png)
 
+* JavaScript/Sinatra Application
 * Start application with `ruby app.rb`
 * Left click on grey background opens menu
 * Click again to close menu
